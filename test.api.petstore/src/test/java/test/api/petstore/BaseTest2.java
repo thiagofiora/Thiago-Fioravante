@@ -3,7 +3,7 @@ package test.api.petstore;
 import org.junit.BeforeClass;
 import io.restassured.RestAssured;
 
-public class BaseTest {
+public class BaseTest2 {
 
 	@BeforeClass
     public static void setup() 
