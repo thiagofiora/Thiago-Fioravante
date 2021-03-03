@@ -14,87 +14,74 @@ public class StoreTest extends BaseTest {
 	public static void setUpStore() {
 		
 		String basePath = System.getProperty("server.base");
-        if(basePath==null){
+        if(basePath==null) {
             basePath = "/store";
         }
         RestAssured.basePath = basePath;
-	}
-	
-	@Test
-	public void pingStoreTest() {
+                
+        given().pathParam("orderId", "1").delete("/order/{orderId}"); //not found test
+        
+        given().pathParam("orderId", "2").delete("/order/{orderId}"); //get existing item test
+        PetOrder order = new PetOrder(2, 2, 2, "2021-03-02T19:12:50.567+00:00", "approved", true); 
+		given().contentType("application/json").body(order).post("/order");
 		
-		get("/inventory").then()
-			.statusCode(HttpStatus.SC_OK);
+		given().pathParam("orderId", "3").delete("/order/{orderId}"); //create item test
+		
+		given().pathParam("orderId", "4").delete("/order/{orderId}"); //delete item test
+        
 	}
 	
 	@Test
-	public void getInventoryStoreTest() {
+	public void getInventoryTest() {
 		
 		get("/inventory").then()
 			.statusCode(HttpStatus.SC_OK)
-			.statusCode(HttpStatus.SC_OK);
+			.body("approved", equalTo(5));
 	}
 	
 	@Test
-	public void getOrderFalseStoreTest() {
+	public void getOrderNotFoundTest() {
 		
 		given()
 		.pathParam("orderId", "1")
 		.get("/order/{orderId}").then()
-			.statusCode(HttpStatus.SC_OK)
-			.body(
-	             "id", equalTo(1),
-	             "petId", equalTo(2001),
-	             "quantity", equalTo(1),
-	             "complete", equalTo(false));
+			.statusCode(HttpStatus.SC_NOT_FOUND);
 	}
 	
 	@Test
-	public void getOrderApprovedStoreTest() {
+	public void getOrderTest() {
 		
 		given()
-		.pathParam("orderId", "3")
+		.pathParam("orderId", "2")
 		.get("/order/{orderId}").then()
 			.statusCode(HttpStatus.SC_OK)
 			.body(
-	             "id", equalTo(3),
-	             "petId", equalTo(13),
-	             "quantity", equalTo(1),
-		         "shipDate", equalTo("2021-02-22T16:49:12.810+00:00"),
+	             "id", equalTo(2),
+	             "petId", equalTo(2),
+	             "quantity", equalTo(2),
+		         "shipDate", equalTo("2021-03-02T19:12:50.567+00:00"),
 	             "status", equalTo("approved"),
 	             "complete", equalTo(true));
 	}
 	
 	@Test
-	public void getOrderNotFoundStoreTest() {
+	public void postNewOrderTest() {
 		
-		given()
-		.pathParam("orderId", "5")
-		.get("/order/{orderId}").then()
-			.statusCode(HttpStatus.SC_NOT_FOUND)
-			.log().all();
-	}
-	
-	@Test
-	public void postNewOrderStoreTest() {
-		
-		PetOrder order = new PetOrder(6, 25, 5, "2021-03-02T19:12:50.567Z", "approved", true); 
+		PetOrder order = new PetOrder(3, 3, 3, "2021-03-02T19:12:50.567Z", "approved", true); 
 		given()
 		.contentType("application/json")
 		.body(order)
 		.post("/order").then()
-			.statusCode(HttpStatus.SC_OK)
-			.log().all();
+			.statusCode(HttpStatus.SC_OK);
 	}
 	
 	@Test
-	public void deleteOrderStoreTest() {
+	public void deleteOrderTest() {
 		
 		given()
-		.pathParam("orderId", "6")
+		.pathParam("orderId", "4")
 		.delete("/order/{orderId}").then()
-			.statusCode(HttpStatus.SC_OK)
-			.log().all();
+			.statusCode(HttpStatus.SC_OK);
 	}
 	
 	
