@@ -36,6 +36,7 @@ public class BaseTest {
 		
 		driver = new AppiumDriver<MobileElement>(caps);
 		landingPage = new LandingPage(driver);
+		landingPage.cleanTourBaloons();
 	}
 	
 	@After
