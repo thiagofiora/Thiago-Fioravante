@@ -2,6 +2,26 @@
 
 ## Test plan
 
+### Balance tests
+
+#### Expense 
+##### Expense button
+##### Expense by category
+#### Income
+#### Balance resume
+
+### Date range selection tests
+
+### Admin tests
+
+#### Categories
+#### Accounts
+#### Currencies
+#### Settings
+
+### Search tests
+
+
 ## Prerequisite to run automated tests
 To run this project, please assure that the prerequisite are attended.
 1. Android studio and SDK 11 installed
