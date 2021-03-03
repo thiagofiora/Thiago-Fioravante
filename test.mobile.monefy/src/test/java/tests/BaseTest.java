@@ -1,5 +1,9 @@
 package tests;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -27,7 +31,8 @@ public class BaseTest {
 		caps.setCapability("appPackage", "com.monefy.app.lite");
 		caps.setCapability("appActivity", "com.monefy.activities.main.MainActivity_");
 		caps.setCapability("automationName", "UiAutomator2");
-		caps.setCapability(MobileCapabilityType.APP, "C:\\\\Users\\\\demath3\\\\N26\\\\Thiago-Fioravante\\\\com.monefy.app.lite_2021-02-01.apk");
+		Path resourceDirectory = Paths.get("src","test","resources");
+		caps.setCapability(MobileCapabilityType.APP, resourceDirectory.toFile().getAbsolutePath() + "\\app\\com.monefy.app.lite_2021-02-01.apk");
 		caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 	}
 	
