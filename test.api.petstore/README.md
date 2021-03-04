@@ -48,4 +48,5 @@ Then there is one class per endpoint to keep the test well organized and to cont
 
 ## To test
 
-To run this project, is necessary to install the PetStore API sample as explanied here: https://github.com/swagger-api/swagger-petstore
+To run this project, it's necessary to install the PetStore API sample as explanied here: https://github.com/swagger-api/swagger-petstore
+Open Eclipse IDE and run the tests.
