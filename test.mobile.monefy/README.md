@@ -105,13 +105,15 @@ From the income button, do:
 1. Test - Add an expense greater than 0 to any category -> OK
    1. Check in landing page if balance is the same value on circle center as red and balance total
    2. Scroll up the balance and check if expense is listed
-3. Test - Add an income greater than 0 to any category -> OK
+2. Test - Add an income greater than 0 to any category -> OK
    1. Check in landing page if balance is the same value on circle center as green and balance total
    2. Scroll up the balance and check if income is listed
-3. Add a few income/expense
+3. Test - Add a few income/expense
    1. Scroll up balance view -> Items are grouped by category
    2. Click on any category -> Items on that category will be listed by date (most recent on top)
    3. Click on sort item -> balance are listed by date (most recent on top)
+4. Test - Add and delete an expense
+5. Test - Add and edit an expense
 
 #### Transfer
 
@@ -122,9 +124,16 @@ From the income button, do:
 #### Currencies
 #### Settings
 
-### Configuration tests
+### Security tests
 
 ### Filtering/Search tests
+
+## Automation Possibilities
+
+Most of the test listed above could be done at API level. Assuming that the API return all the balance by category summarized, this check could be done in the API. Also, adding valid values could be done in the API. 
+
+The app automation tests could focus on checking UI elements like internationalization, permissions, search, visual effects, visual elements are present, etc.
+So, most of the functional behaviours should be automated at API level and a few duplicated in the UI automation tests like add/delete/edit income/expense, add/delete/edit category. 
 
 
 ## Prerequisite to run automated tests
