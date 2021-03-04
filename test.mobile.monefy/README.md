@@ -21,6 +21,7 @@ This test plan focus on the four main actiosn that can be done in the app, being
 ##### Expense button
 
 **Prerequisite**: Balance is 0
+
 From the Expense button, do:
 
 1. Test - Add an expense greater than 0 to any category -> OK
@@ -58,6 +59,7 @@ From the Expense button, do:
 #### Income
 
 **Prerequisite**: Balance is 0
+
 From the income button, do:
 
 1. Test - Add an expense greater than 0 to any category -> OK
