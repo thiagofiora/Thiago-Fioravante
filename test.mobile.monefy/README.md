@@ -2,7 +2,7 @@
 
 ## Test plan
 
-This test plan focus on the four main actiosn that can be done in the app, being **Balance**, **Configuration**, **Filtering**, **Security** and **Search**. A priorization of each area to test would be:
+This test plan focus on the four main actions that can be done in the **free** app, being **Balance**, **Configuration**, **Filtering**, **Security** and **Search**. A priorization of each area to test would be:
 
 1. Balance Test
    1. This is the core of the application and it must be done with precision and easy steps. If the balance is not accurate, showing the correct expenses/income in the correct categories, the user will lose confidence in the product. Also, this will be the most common action in the app, so if the process of adding a new item is complex, this will demotivate the users.
@@ -55,6 +55,29 @@ From the Expense button, do:
 
 ##### Expense by category
 
+**Prerequisite**: Balance is 0
+
+From the category button in Landing Page, do:
+
+1. Test - Add an expense greater than 0 to Bill -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to Car -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to Clothes -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to Communications -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to Eating out -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to Entertainment -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to Food -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to Gift -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to Health -> Show the value on the correct category on Landing page
+1. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+10. Test - Add an expense greater than 0 to Pets -> Show the value on the correct category on Landing page
+11. Test - Add an expense greater than 0 to Sports -> Show the value on the correct category on Landing page
+12. Test - Add an expense greater than 0 to Taxi -> Show the value on the correct category on Landing page
+13. Test - Add an expense greater than 0 to Toiletry -> Show the value on the correct category on Landing page
+14. Test - Add an expense greater than 0 to Transport -> Show the value on the correct category on Landing page
+15. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+16. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+17. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+18. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
 
 #### Income
 
