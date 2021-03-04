@@ -69,3 +69,81 @@ Secondly, focus on customization like currency and accounts, since this will be 
 Then explore different views (dates) and search, And for last explore minor configurations settings like start date of the week, dark theme and etc.
 
 ### Bugs
+
+1. Category icons change position every time a new record is added
+
+Open app in landing page
+
+--Check the position of the categories
+
+Add an record
+
+--CHeck that the position of the categories changes everytime a new record is added
+
+
+2. The category in the right bottom corner does not show the line linking to the pie chart
+
+Add an expense for all category
+
+--Check that the category at the bottom right corner does not show the line linking to center
+
+
+3. Expense/Income buttons changed it's labels to - (minus) and + (plus) signs
+
+Install the app (default languange is English)
+
+--Check that the labels for Income/Expense are text in English
+
+Change languange to Spanish
+
+--Check that the labels for Income/Expense are text in Spanish
+
+Change languange back to English
+
+--Check that the labels for Income/Expense are -/+
+
+
+4. When all accounts are selected and a record is added it's not possible to select which account it belongs
+
+Monefy don't have a option to select defaul account
+
+Click to add a new record
+
+Select the ammount
+
+Select the category
+
+--Check that in any moment the account was an option to select
+
+To add an record to an specific account it has to be selected in the Account selector before adding the record.
+
+
+5. When a expense is selected in the chart, the balance list is open with all recors instead of only the expense clicked
+
+Add several expense in Monefy
+
+Click and hold one of the "piece" of the chart
+
+--Check that the center wil show the category balance in center
+
+Release and balance list will scroll up.
+
+--Check that all recors are shown and not only the one selected. The previous behaviour gives the user an impression that it will be filtered.
+
+
+6. It's possible to transfer between accounts with more money than the origin.
+
+Click transfer button
+
+Select an amout higher than the balance of the origin account
+
+Click to transfer
+
+--Check that the transfer is recorded and the origin balance is negative. Negative balance is not a problem but shouldn't be possible to do that with transfer.
+
+
+7. Future recurring is an available option at settings but it'savailable ony in Monefy Pro
+
+Open right menu and go to Settings
+
+Enable Future recurring records
