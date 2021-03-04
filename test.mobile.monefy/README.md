@@ -20,7 +20,7 @@ This test plan focus on the four main actions that can be done in the **free** a
 
 ##### Expense button
 
-**Prerequisite**: Balance is 0
+**Prerequisite**: Balance is 0 before each test
 
 From the Expense button, do:
 
@@ -55,7 +55,7 @@ From the Expense button, do:
 
 ##### Expense by category
 
-**Prerequisite**: Balance is 0
+**Prerequisite**: Balance is 0 before each test
 
 From the category button in Landing Page, do:
 
@@ -81,7 +81,7 @@ From the category button in Landing Page, do:
 
 #### Income
 
-**Prerequisite**: Balance is 0
+**Prerequisite**: Balance is 0 before each test
 
 From the income button, do:
 
@@ -99,6 +99,20 @@ From the income button, do:
 12. Test - Add an income greater than 0 to Savings -> Show the value on the correct category on Landing page
 
 #### Balance resume
+
+**Prerequisite**: Balance is 0 before each test
+
+1. Test - Add an expense greater than 0 to any category -> OK
+   1. Check in landing page if balance is the same value on circle center as red and balance total
+   2. Scroll up the balance and check if expense is listed
+3. Test - Add an income greater than 0 to any category -> OK
+   1. Check in landing page if balance is the same value on circle center as green and balance total
+   2. Scroll up the balance and check if income is listed
+3. Add a few income/expense
+   1. Scroll up balance view -> Items are grouped by category
+   2. Click on any category -> Items on that category will be listed by date (most recent on top)
+   3. Click on sort item -> balance are listed by date (most recent on top)
+
 #### Transfer
 
 ### Configuration tests
