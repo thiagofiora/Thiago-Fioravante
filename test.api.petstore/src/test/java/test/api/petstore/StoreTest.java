@@ -18,17 +18,6 @@ public class StoreTest extends BaseTest {
             basePath = "/store";
         }
         RestAssured.basePath = basePath;
-                
-        given().pathParam("orderId", "1").delete("/order/{orderId}"); //not found test
-        
-        given().pathParam("orderId", "2").delete("/order/{orderId}"); //get existing item test
-        PetOrder order = new PetOrder(2, 2, 2, "2021-03-02T19:12:50.567+00:00", "approved", true); 
-		given().contentType("application/json").body(order).post("/order");
-		
-		given().pathParam("orderId", "3").delete("/order/{orderId}"); //create item test
-		
-		given().pathParam("orderId", "4").delete("/order/{orderId}"); //delete item test
-        
 	}
 	
 	@Test
@@ -42,6 +31,8 @@ public class StoreTest extends BaseTest {
 	@Test
 	public void getOrderNotFoundTest() {
 		
+        given().pathParam("orderId", "1").delete("/order/{orderId}");
+		
 		given()
 		.pathParam("orderId", "1")
 		.get("/order/{orderId}").then()
@@ -50,6 +41,10 @@ public class StoreTest extends BaseTest {
 	
 	@Test
 	public void getOrderTest() {
+		
+		given().pathParam("orderId", "2").delete("/order/{orderId}");
+        PetOrder order = new PetOrder(2, 2, 2, "2021-03-02T19:12:50.567+00:00", "approved", true); 
+		given().contentType("application/json").body(order).post("/order");
 		
 		given()
 		.pathParam("orderId", "2")
@@ -67,6 +62,8 @@ public class StoreTest extends BaseTest {
 	@Test
 	public void postNewOrderTest() {
 		
+		given().pathParam("orderId", "3").delete("/order/{orderId}");
+		
 		PetOrder order = new PetOrder(3, 3, 3, "2021-03-02T19:12:50.567Z", "approved", true); 
 		given()
 		.contentType("application/json")
@@ -77,12 +74,15 @@ public class StoreTest extends BaseTest {
 	
 	@Test
 	public void deleteOrderTest() {
+
+		given().pathParam("orderId", "4").delete("/order/{orderId}");
+		PetOrder order = new PetOrder(4, 2, 2, "2021-03-02T19:12:50.567+00:00", "approved", true); 
+		given().contentType("application/json").body(order).post("/order");
 		
 		given()
 		.pathParam("orderId", "4")
 		.delete("/order/{orderId}").then()
 			.statusCode(HttpStatus.SC_OK);
 	}
-	
-	
+
 }

@@ -20,28 +20,14 @@ public class PetTest extends BaseTest {
             basePath = "/pet";
         }
         RestAssured.basePath = basePath;
-        
-        given().pathParam("petId", "1").delete("/{petId}"); // not found test
-        
-        given().pathParam("petId", "2").delete("/{petId}");  // find by id test
-        Pet pet = new Pet(2, "Barbicha", new Category(1, "Dog"), new String[] { "photo01.jpg" }, new Tag[] {new Tag(1, "small")}, "available");
-        given().contentType("application/json").body(pet).post("");
-        
-        given().pathParam("petId", "3").delete("/{petId}"); // add test
-        
-        given().pathParam("petId", "4").delete("/{petId}");  // update test
-        Pet petUpdate = new Pet(4, "Barbicha", new Category(1, "Dog"), new String[] { "photo01.jpg" }, new Tag[] {new Tag(1, "medium")}, "available");
-        given().contentType("application/json").body(petUpdate).post("");
-        
-        given().pathParam("petId", "6").delete("/{petId}");  // delete test
-        Pet petDelete = new Pet(6, "Barbicha", new Category(1, "Dog"), new String[] { "photo01.jpg" }, new Tag[] {new Tag(1, "medium")}, "available");
-        given().contentType("application/json").body(petDelete).post("");
 	}
 	
 	@Test
 	public void getPetNotFoundByIdTest() {
 		
-		 given()
+		given().pathParam("petId", "1").delete("/{petId}");
+		
+		given()
 		.pathParam("petId", "1")
 		.get("/{petId}")
 			.then()
@@ -51,9 +37,13 @@ public class PetTest extends BaseTest {
 	@Test
 	public void getPetByIdTest() {
 		
+		given().pathParam("petId", "2").delete("/{petId}");
+        Pet pet = new Pet(2, "Barbicha", new Category(1, "Dog"), new String[] { "photo01.jpg" }, new Tag[] {new Tag(1, "small")}, "available");
+        given().contentType("application/json").body(pet).post("");
+        
 		given()
 		.pathParam("petId", "2")
-		.get("/{petId}")//.then().log().all();;
+		.get("/{petId}")
 		.then()
 			.statusCode(HttpStatus.SC_OK)
 			.body(
@@ -110,23 +100,29 @@ public class PetTest extends BaseTest {
 	@Test
 	public void getPetByTagTest() {
 		
+		given().pathParam("petId", "7").delete("/{petId}");
+        Pet pet = new Pet(3, "Barbicha", new Category(1, "Dog"), new String[] { "photo01.jpg" }, new Tag[] {new Tag(1, "tagTest")}, "available");
+        given().contentType("application/json").body(pet).post("");
+		
 		Pet[] pets = given()
-			.pathParam("tag", "small")
+			.pathParam("tag", "tagTest")
 			.get("/findByTags?tags={tag}").as(Pet[].class);
 		
 		Assert.assertTrue(pets.length == 1);
-		Assert.assertEquals(pets[0].id, 2);
+		Assert.assertEquals(pets[0].id, 7);
 		Assert.assertEquals(pets[0].name, "Barbicha");
 		Assert.assertEquals(pets[0].category.id, 1);
 		Assert.assertEquals(pets[0].category.name, "Dog");
 		Assert.assertEquals(pets[0].photoUrls[0], "photo01.jpg");
 		Assert.assertEquals(pets[0].status, "available");
 		Assert.assertEquals(pets[0].tags[0].id, 1);
-		Assert.assertEquals(pets[0].tags[0].name, "small");
+		Assert.assertEquals(pets[0].tags[0].name, "tagTest");
 	}
 	
 	@Test
 	public void postAddNewPetTest() {
+		
+		given().pathParam("petId", "3").delete("/{petId}");
 		
 		Pet pet = new Pet(3, "Barbicha", new Category(1, "Dog"), new String[] {"photo01.jpg"}, new Tag[] { new Tag(1, "small") }, "available"); 
 		given()
@@ -138,6 +134,10 @@ public class PetTest extends BaseTest {
 	
 	@Test
 	public void putUpdatePetTest() {
+		
+		given().pathParam("petId", "4").delete("/{petId}");
+        Pet petUpdate = new Pet(4, "Barbicha", new Category(1, "Dog"), new String[] { "photo01.jpg" }, new Tag[] {new Tag(1, "medium")}, "available");
+        given().contentType("application/json").body(petUpdate).post("");
 		
 		Pet pet = new Pet(4, "CatDog", new Category(2, "Cat"), new String[] {"photo02.jpg"}, new Tag[] { new Tag(2, "big") }, "available"); 
 		given()
@@ -165,6 +165,10 @@ public class PetTest extends BaseTest {
 	@Test
 	public void deletePetTest() {
 		
+		given().pathParam("petId", "6").delete("/{petId}");
+        Pet petDelete = new Pet(6, "Barbicha", new Category(1, "Dog"), new String[] { "photo01.jpg" }, new Tag[] {new Tag(1, "medium")}, "available");
+        given().contentType("application/json").body(petDelete).post("");
+        
 		given()
 		.pathParam("petId", "6")
 		.delete("/{petId}").then()

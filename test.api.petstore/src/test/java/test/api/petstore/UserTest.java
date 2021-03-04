@@ -1,9 +1,6 @@
 package test.api.petstore;
 
 import io.restassured.RestAssured;
-import testdataobject.Category;
-import testdataobject.Pet;
-import testdataobject.Tag;
 import testdataobject.User;
 
 import static org.hamcrest.Matchers.*;
@@ -25,29 +22,12 @@ public class UserTest extends BaseTest {
             basePath = "/user";
         }
         RestAssured.basePath = basePath;
-                
-        
-        given().pathParam("username", "thiagoN26").delete("/{username}"); //create user test
-        
-        given().pathParam("username", "thiagoN26_02").delete("/{username}"); //create user list test
-        given().pathParam("username", "thiagoN26_03").delete("/{username}"); //create user list test
-        		
-		given().pathParam("username", "thiagoN26_04").delete("/{username}"); // get user test
-		User user4 = new User(4, "thiagoN26_04", "Thiago4", "Fioravante4", "thiago4@n26.es", "1234564", "+34112233444", 1); 
-		given().contentType("application/json").body(user4).post("");
-		
-		User user5 = new User(5, "thiagoN26_05", "Thiago5", "Fioravante5", "thiago5@n26.es", "1234565", "+34112233445", 1); // delete user test
-		given().contentType("application/json").body(user5).post("");
-		
-		User user6 = new User(6, "thiagoN26_06", "Thiago6", "Fioravante6", "thiago6@n26.es", "1234566", "+34112233446", 1); //login test
-		given().contentType("application/json").body(user6).post("");
-		
-		User user8 = new User(8, "thiagoN26_08", "Thiago8", "Fioravante8", "thiago8@n26.es", "1234568", "+34112233448", 1); //update test
-		given().contentType("application/json").body(user8).post("");
 	}
 	
 	@Test
 	public void postCreateNewUserTest() {
+		
+		given().pathParam("username", "thiagoN26").delete("/{username}");
 		
 		User user = new User(1, "thiagoN26", "Thiago", "Fioravante", "thiago@n26.es", "123456", "+3411223344", 1); 
 		given()
@@ -59,6 +39,9 @@ public class UserTest extends BaseTest {
 	
 	@Test
 	public void postCreateNewUserListTest() {
+		
+		given().pathParam("username", "thiagoN26_02").delete("/{username}");
+        given().pathParam("username", "thiagoN26_03").delete("/{username}");
 		
 		User user2 = new User(2, "thiagoN26_02", "Thiago2", "Fioravante2", "thiago2@n26.es", "1234562", "+34112233442", 1); 
 		User user3 = new User(3, "thiagoN26_03", "Thiago3", "Fioravante3", "thiago3@n26.es", "1234563", "+34112233443", 1);
@@ -76,6 +59,10 @@ public class UserTest extends BaseTest {
 	
 	@Test
 	public void getUserByUsernameTest() {
+		
+		given().pathParam("username", "thiagoN26_04").delete("/{username}");
+		User user4 = new User(4, "thiagoN26_04", "Thiago4", "Fioravante4", "thiago4@n26.es", "1234564", "+34112233444", 1); 
+		given().contentType("application/json").body(user4).post("");
 		
 		given()
 		.pathParam("username", "thiagoN26_04")
@@ -95,6 +82,9 @@ public class UserTest extends BaseTest {
 	@Test
 	public void deleteUserTest() {
 		
+		User user5 = new User(5, "thiagoN26_05", "Thiago5", "Fioravante5", "thiago5@n26.es", "1234565", "+34112233445", 1);
+		given().contentType("application/json").body(user5).post("");
+		
 		given()
 		.pathParam("username", "thiagoN26_05")
 		.delete("/{username}").then()
@@ -103,6 +93,9 @@ public class UserTest extends BaseTest {
 	
 	@Test
 	public void getLoginSuccesfullTest() {
+		
+		User user6 = new User(6, "thiagoN26_06", "Thiago6", "Fioravante6", "thiago6@n26.es", "1234566", "+34112233446", 1);
+		given().contentType("application/json").body(user6).post("");
 		
 		given()
 		.pathParam("username", "thiagoN26_06")
@@ -142,12 +135,16 @@ public class UserTest extends BaseTest {
 	@Test
 	public void putUpdateUserTest() {
 		
-		User user8 = new User(8, "thiagoN26_09", "Thiago9", "Fioravante9", "thiago9@n26.es", "1234569", "+34112233449", 2); //update test
+		given().pathParam("username", "thiagoN26_08").delete("/{username}");
+		User user8 = new User(8, "thiagoN26_08", "Thiago8", "Fioravante8", "thiago8@n26.es", "1234568", "+34112233448", 1);
+		given().contentType("application/json").body(user8).post("");
+		
+		User user9 = new User(8, "thiagoN26_09", "Thiago9", "Fioravante9", "thiago9@n26.es", "1234569", "+34112233449", 2); //update test
 		
 		given()
 		.contentType("application/json")
 		.pathParam("username", "thiagoN26_08")
-		.body(user8)
+		.body(user9)
 		.put("/{username}").then()
 			.statusCode(HttpStatus.SC_OK);
 		
