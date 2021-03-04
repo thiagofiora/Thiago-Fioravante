@@ -19,7 +19,6 @@ Devices/Platforms:
 
 ### Tests
 
-Explore @@@ with ### to discover ===
 1. Explore Expense button with positive values to dicover if negative balance are correct
 2. Explore Expense button with zero or negative values to discover if user can't add them
 3. Explore Expense button with all categories to discover if all categories are working as expected
@@ -63,5 +62,10 @@ Explore @@@ with ### to discover ===
 40. Explore Settings with restore backups to discover if a backups is restored corerctly
 41. Explore Settings with clear date to discover if all records are deleted
 
+## Prioritization
+
+The focus of this exploratory tests should focus on adding/edditing/deleting records since this is the area where our users wil spent most of their times and it's the mais purpose of the app. If this area show any bug it will need to be raised immediately with the team so we can discuss it impact.
+Secondly, focus on customization like currency and accounts, since this will be the one of the first things that we expect new users will do.
+Then explore different views (dates) and search, And for last explore minor configurations settings like start date of the week, dark theme and etc.
 
 ### Bugs
