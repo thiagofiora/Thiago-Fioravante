@@ -2,7 +2,7 @@
 
 ## Test plan
 
-This test plan focus on the four main actions that can be done in the **free** app, being **Balance**, **Configuration**, **Filtering**, **Security** and **Search**. A priorization of each area to test would be:
+This test plan focus on the four main actions that can be done in the **free** app, being **Balance**, **Configuration**, **Filtering/Search**. A priorization of each area to test would be:
 
 1. Balance Test
    1. This is the core of the application and it must be done with precision and easy steps. If the balance is not accurate, showing the correct expenses/income in the correct categories, the user will lose confidence in the product. Also, this will be the most common action in the app, so if the process of adding a new item is complex, this will demotivate the users.
@@ -14,6 +14,11 @@ This test plan focus on the four main actions that can be done in the **free** a
    1. The ability to see the balance over a period or filter some category can show the user trends and help them to understand better how his moeny is being spent.
 
 **The steps will not be defined here**
+
+**Not all tests were automated due to time and technologies constraints**
+
+To implement all tests, beside time, I would need a better strategy as discussed below and also some better stack not used here as browserstack where paralelization is possible
+
 ### Balance tests
 
 #### Expense 
@@ -108,6 +113,11 @@ From the income button, do:
 5. Test - Add and edit an expense
 
 #### Transfer
+
+**From here I'll not add all the tests as I believe that the idea of test specification was done above**
+
+**Also, a broad idea of possible automation tests can be get from the exploratory charter and the categories below**
+
 
 ### Configuration tests
 
