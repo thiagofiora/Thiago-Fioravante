@@ -13,13 +13,66 @@ This test plan focus on the four main actiosn that can be done in the app, being
 1. Filtering/Search
    1. The ability to see the balance over a period or filter some category can show the user trends and help them to understand better how his moeny is being spent.
 
-
+**The steps will not be defined here**
 ### Balance tests
 
 #### Expense 
+
 ##### Expense button
+
+**Prerequisite**: Balance is 0
+From the Expense button, do:
+
+1. Test - Add an expense greater than 0 to any category -> OK
+2. Test - Add an expense greater than 0 with note to any category -> OK
+3. Test - Add an expense greater than 0 with expression (+, -, *, /) to any category -> OK
+4. Test - Add an expense greater than 0 with decimal value to any category -> OK
+5. Test - Add an expense greater than 0 changing bucket to any category -> OK
+6. Test - Add an expense greater than 0 changing date to any category -> OK
+7. Test - Add an expense greater than 0 a new any category -> Monefy Pro ad
+8. Test - Add an expense equals to 0 to any category -> Block choose category
+9. Test - Add an expense less that 0 to any category -> Block choose category
+10. Test - Add an expense greater than 0 to Bill -> Show the value on the correct category on Landing page
+11. Test - Add an expense greater than 0 to Car -> Show the value on the correct category on Landing page
+12. Test - Add an expense greater than 0 to Clothes -> Show the value on the correct category on Landing page
+13. Test - Add an expense greater than 0 to Communications -> Show the value on the correct category on Landing page
+14. Test - Add an expense greater than 0 to Eating out -> Show the value on the correct category on Landing page
+15. Test - Add an expense greater than 0 to Entertainment -> Show the value on the correct category on Landing page
+16. Test - Add an expense greater than 0 to Food -> Show the value on the correct category on Landing page
+17. Test - Add an expense greater than 0 to Gift -> Show the value on the correct category on Landing page
+18. Test - Add an expense greater than 0 to Health -> Show the value on the correct category on Landing page
+19. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+20. Test - Add an expense greater than 0 to Pets -> Show the value on the correct category on Landing page
+21. Test - Add an expense greater than 0 to Sports -> Show the value on the correct category on Landing page
+22. Test - Add an expense greater than 0 to Taxi -> Show the value on the correct category on Landing page
+23. Test - Add an expense greater than 0 to Toiletry -> Show the value on the correct category on Landing page
+24. Test - Add an expense greater than 0 to Transport -> Show the value on the correct category on Landing page
+25. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+26. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+27. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+28. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
+
 ##### Expense by category
+
+
 #### Income
+
+**Prerequisite**: Balance is 0
+From the income button, do:
+
+1. Test - Add an expense greater than 0 to any category -> OK
+2. Test - Add an expense greater than 0 with note to any category -> OK
+3. Test - Add an expense greater than 0 with expression (+, -, *, /) to any category -> OK
+4. Test - Add an expense greater than 0 with decimal value to any category -> OK
+5. Test - Add an expense greater than 0 changing bucket to any category -> OK
+6. Test - Add an expense greater than 0 changing date to any category -> OK
+7. Test - Add an expense greater than 0 a new any category -> Monefy Pro ad
+8. Test - Add an expense equals to 0 to any category -> Block choose category
+9. Test - Add an expense less that 0 to any category -> Block choose category
+10. Test - Add an income greater than 0 to Deposits -> Show the value on the correct category on Landing page
+11. Test - Add an income greater than 0 to Salary -> Show the value on the correct category on Landing page
+12. Test - Add an income greater than 0 to Savings -> Show the value on the correct category on Landing page
+
 #### Balance resume
 #### Transfer
 
