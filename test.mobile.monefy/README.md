@@ -48,10 +48,6 @@ From the Expense button, do:
 22. Test - Add an expense greater than 0 to Taxi -> Show the value on the correct category on Landing page
 23. Test - Add an expense greater than 0 to Toiletry -> Show the value on the correct category on Landing page
 24. Test - Add an expense greater than 0 to Transport -> Show the value on the correct category on Landing page
-25. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
-26. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
-27. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
-28. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
 
 ##### Expense by category
 
@@ -74,10 +70,6 @@ From the category button in Landing Page, do:
 12. Test - Add an expense greater than 0 to Taxi -> Show the value on the correct category on Landing page
 13. Test - Add an expense greater than 0 to Toiletry -> Show the value on the correct category on Landing page
 14. Test - Add an expense greater than 0 to Transport -> Show the value on the correct category on Landing page
-15. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
-16. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
-17. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
-18. Test - Add an expense greater than 0 to House -> Show the value on the correct category on Landing page
 
 #### Income
 
